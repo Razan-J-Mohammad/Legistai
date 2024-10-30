@@ -1,22 +1,39 @@
-import React from 'react';
-import styles from './Sidebar.module.css';
-import '../../variables.css';
-import { FaHome, FaCloud, FaUser, FaCalendarAlt, FaGavel, FaCog, FaSignOutAlt, FaComments } from 'react-icons/fa';
+"use client";
 
-export default function OuterSidebar() {
+import React, { useState } from 'react';
+import styles from './Sidebar.module.css';
+import LogoutButton from './LogoutButton';
+import sidebarItems from './sidebarItems';
+
+const OuterSidebar = () => {
+    const [activeItem, setActiveItem] = useState('Profile');
+    const handleItemClick = (label) => {
+        if (label !== 'Log Out' && label !== 'Start New Chat') {
+            setActiveItem(label);
+        }
+    };
+
     return (
         <aside className={styles.outerSidebar}>
-            <h1>Welcome to the Legistai!</h1>
-            <ul>
-                <li><FaHome /> Dashboard</li>
-                <li><FaCloud /> Drive</li>
-                <li className={styles.profile}><FaUser /> Profile</li>
-                <li><FaCalendarAlt /> Calendar</li>
-                <li><FaGavel /> Law Firm Options</li>
-                <li><FaCog /> Settings</li>
-                <li className={styles.chat}><FaComments /> Start New Chat</li>
-                <li className={styles.logout}><FaSignOutAlt /> Log Out</li>
+            <h1>Welcome to the Legislate!</h1>
+            <ul >
+                {sidebarItems.map((item, index) => (
+                    <li key={index}>
+                        <button
+                            className={`${styles.sidebarButton} ${activeItem === item.label && item.label !== 'Log Out' && item.label !== 'Start New Chat' ? styles.activeButton : ''} ${item.label === 'Start New Chat' ? styles.chatButton : ''}`}
+                            onClick={() => handleItemClick(item.label)}
+                        >
+                            <span className={activeItem === item.label && item.label !== 'Log Out' && item.label !== 'Start New Chat' ? styles.activeIcon : ''}>
+                                {item.icon}
+                            </span>
+                            {item.label}
+                        </button>
+                    </li>
+                ))}
             </ul>
+            <LogoutButton />
         </aside>
     );
-}
+};
+
+export default OuterSidebar;
