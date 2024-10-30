@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Sidebar.module.css';
 import LogoutButton from './LogoutButton';
 import sidebarItems from './sidebarItems';
 
-const OuterSidebar = () => {
-    const [activeItem, setActiveItem] = useState('Profile');
+const OuterSidebar = ({ activeItem, setActiveItem }) => {
     const handleItemClick = (label) => {
         if (label !== 'Log Out' && label !== 'Start New Chat') {
             setActiveItem(label);
@@ -15,15 +14,15 @@ const OuterSidebar = () => {
 
     return (
         <aside className={styles.outerSidebar}>
-            <h1>Welcome to the Legislate!</h1>
-            <ul >
+            <h1>Welcome to Legislate!</h1>
+            <ul>
                 {sidebarItems.map((item, index) => (
                     <li key={index}>
                         <button
-                            className={`${styles.sidebarButton} ${activeItem === item.label && item.label !== 'Log Out' && item.label !== 'Start New Chat' ? styles.activeButton : ''} ${item.label === 'Start New Chat' ? styles.chatButton : ''}`}
+                            className={`${styles.sidebarButton} ${activeItem === item.label ? styles.activeButton : ''} ${item.label === 'Start New Chat' ? styles.chatButton : ''}`}
                             onClick={() => handleItemClick(item.label)}
                         >
-                            <span className={activeItem === item.label && item.label !== 'Log Out' && item.label !== 'Start New Chat' ? styles.activeIcon : ''}>
+                            <span className={activeItem === item.label ? styles.activeIcon : ''}>
                                 {item.icon}
                             </span>
                             {item.label}

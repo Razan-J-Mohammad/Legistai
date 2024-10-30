@@ -1,0 +1,24 @@
+
+.profileContainer {
+    position: fixed;
+    display: flex; /* This enables flex properties to work */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    width: 100%;
+    left: 350px;
+    top: 90px;
+    height: 100%;
+}
+
+@media (min-width: 1440px) {
+
+    .profileContainer {
+        width: 100%;
+        left: 290px;
+        top: 90px;
+        height: 100%;
+    }
+}
