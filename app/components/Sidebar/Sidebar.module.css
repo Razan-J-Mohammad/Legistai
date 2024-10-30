@@ -1,0 +1,82 @@
+.outerSidebar {
+    width: 200px;
+    background-color: white;
+    padding: 20px;
+
+  }
+
+  .outerSidebar ul  {
+    list-style: none;
+    padding-left: 30px;
+      color: #707070;
+  }
+  .outerSidebar h1 {
+      color: black;
+      margin-top: 0;
+  }
+
+  .outerSidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: 10px;
+      font-size: 14px;
+  }
+.outerSidebar li svg {
+    margin-right: 8px;
+    color: #333;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+}
+ .logout
+ {
+     position: absolute;
+    top: 680px;
+    left: 100px;
+    cursor: pointer;
+    border: 1px solid #F7F8FA;
+     background-color: #F7F8FA;
+    border-radius: 30px;
+     padding-right: 100px!important;
+     padding-left: 20px!important;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   color: black;
+     font-size: 14px;
+}
+.chat{
+    position: absolute;
+    left: 100px;
+    border: 1px solid #c6fbfb;
+    border-radius: 30px;
+    padding-right: 40px !important;;
+    padding-left: 20px!important;
+    background-color: #d7ffff;
+    color: #3DBDBC;
+    font-size: 14px!important;
+}
+.chat svg {
+    color: #3DBDBC !important;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+.profile{
+    border: 1px solid black;
+    border-radius: 30px;
+    position: absolute;
+    padding-right: 100px !important;;
+    left: 100px;
+    background-color: black;
+    padding-left: 20px!important;
+    font-size: 14px!important;
+    color: white;
+
+}
+.profile svg{
+    color: #3DBDBC !important;
+}
+  .outerSidebar li:hover {
+    background-color: #4e4e6e;
+  }
