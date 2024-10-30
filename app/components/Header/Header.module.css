@@ -1,9 +1,11 @@
+/* Header.module.css */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: white;
+  background-color: var(--header-color); /* Use header color variable */
   border-radius: 8px;
 }
 
@@ -18,7 +20,7 @@
   max-width: 676px;
   display: flex;
   align-items: center;
-  background-color: #F7F8FA;
+  background-color: var(--secondary-color); /* Use secondary color variable */
   border-radius: 30px;
 }
 
@@ -26,7 +28,7 @@
   position: absolute;
   left: 20px;
   font-size: 18px;
-  color: #707070;
+  color: var(--text-color); /* Use text color variable */
 }
 
 .searchInput {
@@ -36,24 +38,25 @@
   border: none;
   border-radius: 30px;
   font-size: 16px;
-  color: #707070;
-  background-color: #F7F8FA;
+  color: var(--text-color); /* Use text color variable */
+  background-color: var(--secondary-color); /* Use secondary color variable */
   outline: none;
 }
 
 .actions > div {
   margin-right: 20px;
 }
+
 .languageContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 2px solid #F7F8FA;
+  border: 2px solid var(--secondary-color); /* Use secondary color variable */
   padding: 14px 14px;
   border-radius: 30px;
-  color: black;
-  background-color: #F7F8FA;
+  color: black; /* You can also use a variable here if needed */
+  background-color: var(--secondary-color); /* Use secondary color variable */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -72,7 +75,7 @@
   position: relative;
   font-size: 20px;
   padding: 14px;
-  background-color: #F7F8FA;
+  background-color: var(--secondary-color); /* Use secondary color variable */
 }
 
 .notificationDot {
@@ -81,12 +84,12 @@
   right: -2px;
   width: 10px;
   height: 10px;
-  background-color: #B84646;
+  background-color: #B84646; /* This could also be a variable if needed */
   border-radius: 50%;
 }
 
 .profile {
-  background-color: #F7F8FA;
+  background-color: var(--secondary-color); /* Use secondary color variable */
   padding: 8px 12px;
 }
 
@@ -98,15 +101,15 @@
 .profileName {
   font-weight: 600;
   font-size: 13px;
-  color: black;
+  color: black; /* You can also use a variable here if needed */
 }
 
 .profileTitle {
   font-size: 10px;
-  color: #707070;
-
+  color: var(--text-color); /* Use text color variable */
 }
+
 .profileInfo {
   display: flex;
-  flex-direction: column; /* لجعل النصين في اتجاه عمودي */
+  flex-direction: column;
 }

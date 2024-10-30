@@ -3,24 +3,34 @@
     background-color: white;
     padding: 20px;
 
-  }
+    --primary-color: #3DBDBC;
+    --secondary-color: #F7F8FA;
+    --text-color: #707070;
+    --background-color: white;
+    --hover-background-color: #4e4e6e;
+    --logout-background-color: #F7F8FA;
+    --chat-background-color: #d7ffff;
+    --profile-background-color: black;
+}
 
-  .outerSidebar ul  {
+.outerSidebar ul {
     list-style: none;
     padding-left: 30px;
-      color: #707070;
-  }
-  .outerSidebar h1 {
-      color: black;
-      margin-top: 0;
-  }
+    color: var(--text-color);
+}
 
-  .outerSidebar li {
+.outerSidebar h1 {
+    color: black;
+    margin-top: 0;
+}
+
+.outerSidebar li {
     padding: 10px 0;
     cursor: pointer;
     margin-top: 10px;
-      font-size: 14px;
-  }
+    font-size: 14px;
+}
+
 .outerSidebar li svg {
     margin-right: 8px;
     color: #333;
@@ -28,55 +38,56 @@
     height: 20px;
     font-size: 14px;
 }
- .logout
- {
-     position: absolute;
+
+.logout {
+    position: absolute;
     top: 680px;
     left: 100px;
     cursor: pointer;
-    border: 1px solid #F7F8FA;
-     background-color: #F7F8FA;
+    border: 1px solid var(--logout-background-color);
+    background-color: var(--logout-background-color);
     border-radius: 30px;
-     padding-right: 100px!important;
-     padding-left: 20px!important;
+    padding-right: 100px !important;
+    padding-left: 20px !important;
     display: flex;
-   justify-content: center;
-   align-items: center;
-   color: black;
-     font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 14px;
 }
-.chat{
+
+.chat {
     position: absolute;
     left: 100px;
     border: 1px solid #c6fbfb;
     border-radius: 30px;
-    padding-right: 40px !important;;
-    padding-left: 20px!important;
-    background-color: #d7ffff;
-    color: #3DBDBC;
-    font-size: 14px!important;
+    padding-right: 40px !important;
+    padding-left: 20px !important;
+    background-color: var(--chat-background-color);
+    color: var(--primary-color);
+    font-size: 14px !important;
 }
+
 .chat svg {
-    color: #3DBDBC !important;
+    color: var(--primary-color) !important;
     font-size: 20px;
     width: 20px;
     height: 20px;
 }
-.profile{
+
+.profile {
     border: 1px solid black;
     border-radius: 30px;
     position: absolute;
-    padding-right: 100px !important;;
+    padding-right: 100px !important;
     left: 100px;
-    background-color: black;
-    padding-left: 20px!important;
-    font-size: 14px!important;
+    background-color: var(--profile-background-color);
+    padding-left: 20px !important;
+    font-size: 14px !important;
     color: white;
+}
 
+.profile svg {
+    color: var(--primary-color) !important;
 }
-.profile svg{
-    color: #3DBDBC !important;
-}
-  .outerSidebar li:hover {
-    background-color: #4e4e6e;
-  }
+
