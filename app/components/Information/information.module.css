@@ -1,0 +1,152 @@
+.info {
+    position: fixed;
+    background-color: var(--background-color);
+    width: 51%;
+    height: 36.5%;
+    left: 665px;
+    top:335px;
+    border: 1px  solid white;
+    border-radius: 20px;
+}
+.head{
+  position: fixed;
+    width: 49.5%;
+    height: 10%;
+    color:rebeccapurple;
+    background-color:white;
+    top:350px;
+    left:677px;
+    border-radius: 15px;
+
+}
+.location{
+    position: fixed;
+    width: 49.5%;
+    height: 10%;
+    top:470px;
+    background-color: var(--secondary-color);
+    left:677px;
+    border-radius: 15px;
+}
+.description{
+    position: fixed;
+    width: 49.5%;
+    height: 10%;
+    top:590px;
+    background-color: var(--secondary-color);
+    left: 677px;
+    border-radius: 15px;
+}
+
+.imgStyle{
+    margin: 10px 10px;
+}
+.container {
+    display: flex;
+    position: fixed;
+    width: 46%;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+
+.imgContainer {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1e2a38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details {
+    margin-left: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: #333;
+    margin-top: 4px;
+}
+
+.star {
+    color: #ffa500;
+    margin-right: 4px;
+}
+
+.link {
+    margin-left: auto;
+    font-size: 14px;
+    color: #5bc0de;
+    text-decoration: none;
+    background-color: #eaf9f9;
+    padding: 9px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.link::after {
+    content: ' ↗';
+    font-size: 12px;
+}
+.locationContainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f5f7fa;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.locationInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.locationIcon {
+    color: #40c4ff;
+    font-size: 24px;
+    margin-top: -30px;
+}
+
+.locationLabel {
+    font-size: 12px;
+    color: #9e9e9e;
+}
+
+.locationText {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.Area{
+    margin-left: 20px;
+}
+.emptyBox {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}

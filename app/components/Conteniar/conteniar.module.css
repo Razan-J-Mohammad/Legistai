@@ -8,12 +8,21 @@
     background-color: #f8f8f8;
     border-radius: 25px;
     width: 100%;
-    left: 350px;
+    left: 260px;
     top: 90px;
     height: 100%;
 }
 
 @media (min-width: 1440px) {
+
+    .profileContainer {
+        width: 100%;
+        left: 290px;
+        top: 90px;
+        height: 100%;
+    }
+}
+@media (max-width: 1441px) {
 
     .profileContainer {
         width: 100%;

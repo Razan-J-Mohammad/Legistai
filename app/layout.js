@@ -20,7 +20,7 @@ export default function Layout({ children }) {
             <Header />
             <div className="container">
                 <OuterSidebar activeItem={activeItem} setActiveItem={setActiveItem} />
-                <Contenair activeItem={activeItem} /> {/* Conditionally render content */}
+                <Contenair activeItem={activeItem} />
             </div>
         </div>
         </body>

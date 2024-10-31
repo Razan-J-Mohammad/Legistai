@@ -1,9 +1,5 @@
+
 .container {
     display: flex;
-}
-
-.contentWrapper {
-    flex: 1;
-    padding: 20px;
-    background-color: var(--background-color);
+    margin-top: 20px;
 }

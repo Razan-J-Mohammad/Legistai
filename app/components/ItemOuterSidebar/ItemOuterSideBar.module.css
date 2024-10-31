@@ -5,9 +5,9 @@
     padding: 10px 20px;
     background-color: var(--background-color);
     border-radius: 25px;
-    width: 71.5%;
+    width: 73%;
     height: 78%;
-    left: 360PX;
+    left: 360PX!important;
     top:115px
 
 }

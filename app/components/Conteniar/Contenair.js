@@ -6,6 +6,7 @@ import Calendar from '../ItemOuterSidebar/Calendar';
 import LawFirmOptions from '../ItemOuterSidebar/LawFirmOptions';
 import Settings from '../ItemOuterSidebar/Sttings';
 import styles from './conteniar.module.css';
+import InnerSideBar from "../InnerSideBar/InnerSideBar";
 
 const Contenair = ({ activeItem }) => {
     let content;
@@ -33,9 +34,16 @@ const Contenair = ({ activeItem }) => {
     }
 
     return (
-        <div className={styles.profileContainer}>
-            {content}
-        </div>
+        <>
+            <div className={styles.profileContainer}>
+                {content}
+            </div>
+            {activeItem === 'Profile' && (
+                <div>
+                    <InnerSideBar />
+                </div>
+            )}
+        </>
     );
 };
 

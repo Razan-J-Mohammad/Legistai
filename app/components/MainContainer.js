@@ -6,17 +6,18 @@ import OuterSidebar from './Sidebar/OuterSidebar';
 import Contenair from './Conteniar/Contenair';
 import './globals.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import InnerSideBar from "./InnerSideBar/InnerSideBar";
 
 const MainContainer = () => {
-    const [activeItem, setActiveItem] = useState('Dashboard'); // Initialize with "Dashboard"
+    const [activeItem, setActiveItem] = useState('Dashboard');
 
     return (
         <div className="app-layout">
             <Header />
             <div className="container">
-                {/* Pass the activeItem and setActiveItem as props */}
                 <OuterSidebar activeItem={activeItem} setActiveItem={setActiveItem} />
-                <Contenair activeItem={activeItem} /> {/* Display content based on activeItem */}
+                <Contenair activeItem={activeItem} />
+               <InnerSideBar/>
             </div>
         </div>
     );
