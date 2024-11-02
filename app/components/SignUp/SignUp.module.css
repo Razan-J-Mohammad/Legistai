@@ -1,0 +1,161 @@
+.signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+    position: relative;
+}
+
+.signupForm {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.08);
+    width: 450px;
+    padding: 20px;
+}
+@media (max-width: 501px) {
+    .signupForm {
+        width: 350px;
+    }
+}
+
+.formContainer {
+    width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+    border: none;
+
+}
+@media (max-width: 501px) {
+    .formContainer {
+        width: 250px;
+    }
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+}
+.logs{
+    color: #1bbcbc;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.logo {
+    object-fit: contain;
+}
+
+
+.p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: rgba(96, 103, 112, 1);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(132, 135, 138);
+}
+
+.dividerLine {
+    border: none;
+    border-top: 1px solid #e8eaec;
+    width: 100%;
+    box-sizing: border-box;
+}
+.firstName{
+    flex: 1;
+    margin-right: 40px;
+    width: 100%;
+
+}
+.inputGroup {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.inputGroup input {
+    width: 90%;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid rgba(218, 221, 225, 1);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+}
+
+.errorMessageName {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.signupButton {
+    width: 45%;
+    height: 40px;
+    background-color:  #1bbcbc;
+    margin: auto 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+@media (max-width: 501px) {
+    .signupButton {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+}
+.signupButton:hover {
+    background-color: #164949;
+}
+
+.customTextarea {
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid rgba(218, 221, 225, 1);
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    width: 93%;
+    transition: border-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.customTextarea:focus {
+    border-color: #007bff;
+}
+
+.ratingGroup {
+    margin-bottom: 14px;
+    color: rgb(132, 135, 138);
+}
+
+.starRating {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.filledStar {
+    color: #ffc107;
+    font-size: 24px;
+}
+
+.emptyStar {
+    color: #e4e5e9;
+    font-size: 24px;
+}

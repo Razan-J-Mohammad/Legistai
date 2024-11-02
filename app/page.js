@@ -1,7 +1,13 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
-export default function Home() {
- return(
-  <h1>hello</h1>
- )
-}
+import React from 'react';
+import styles from './page.module.css';
 
+export default function Home() {
+ return (
+     <div className={styles.container}>
+      <div className={styles.contentWrapper}>
+
+
+      </div>
+     </div>
+ );
+}
