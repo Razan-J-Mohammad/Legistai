@@ -1,0 +1,12 @@
+.items{
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    border-radius: 25px;
+    min-height: 83vh;
+    width:93%;
+}
+.items p{
+    font-size: 14px;
+}

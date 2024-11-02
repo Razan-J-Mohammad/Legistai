@@ -15,6 +15,11 @@
     width: 450px;
     padding: 20px;
 }
+@media (max-width: 501px) {
+    .signupForm {
+        width: 350px;
+    }
+}
 
 .formContainer {
     width: 420px;
@@ -22,6 +27,11 @@
     padding: 20px;
     border: none;
 
+}
+@media (max-width: 501px) {
+    .formContainer {
+        width: 250px;
+    }
 }
 .title {
     display: flex;
@@ -103,6 +113,12 @@
     transition: background-color 0.5s ease;
 }
 
+@media (max-width: 501px) {
+    .signupButton {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+}
 .signupButton:hover {
     background-color: #164949;
 }

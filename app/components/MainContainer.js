@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import Header from './Header/Header';
-import OuterSidebar from './Sidebar/OuterSidebar';
-import Contenair from './Conteniar/Contenair';
+import OuterSidebarContainer from '@/app/components/OuterSidebarContainer/OuterSidebarContainer';
+import InnerContanier from '@/app/components/InnerContanier/InnerContanier';
 import './globals.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import InnerSideBar from "./InnerSideBar/InnerSideBar";
+import InnerProfileContainer from "@/app/components/InnerProfileContainer/InnerProfileContainer";
 
 const MainContainer = () => {
     const [activeItem, setActiveItem] = useState('Dashboard');
@@ -15,9 +15,8 @@ const MainContainer = () => {
         <div className="app-layout">
             <Header />
             <div className="container">
-                <OuterSidebar activeItem={activeItem} setActiveItem={setActiveItem} />
-                <Contenair activeItem={activeItem} />
-               <InnerSideBar/>
+                <OuterSidebarContainer activeItem={activeItem} setActiveItem={setActiveItem} />
+                <InnerContanier activeItem={activeItem} />
             </div>
         </div>
     );

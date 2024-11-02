@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './SignUp.module.css';
 import Image from 'next/image';
-import { FaArrowRight, FaUserPlus } from 'react-icons/fa';
+import {FaArrowRight, FaUserPlus, FaStar, FaExclamationTriangle} from 'react-icons/fa';
 import initialFormData from './initialFormData';
 import validateForm from './validateForm';
 import { handleBlur, handleChange, handleRatingChange } from './formHandlers';
@@ -34,6 +34,22 @@ const SignupForm = ({ onSubmit }) => {
         toast.error(message, {
             position: "top-center",
             autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            icon: <FaExclamationTriangle/> ,
+            style: {
+                backgroundColor: "#1bbcbc",
+                color: "#fff",
+                fontSize: "16px",
+                fontWeight: "bold",
+                padding: "10px 15px",
+                borderRadius: "8px",
+            },
+            progressStyle: {
+                backgroundColor: "#f5c6cb",
+            },
         });
     };
 
@@ -151,7 +167,7 @@ const SignupForm = ({ onSubmit }) => {
                                     onClick={() => handleRatingChange(star, setFormData, validate)}
                                     className={formData.rating >= star ? styles.filledStar : styles.emptyStar}
                                 >
-                                    ★
+                                     <FaStar />
                                 </span>
                             ))}
                         </div>

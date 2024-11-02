@@ -1,8 +1,8 @@
 "use client";
 import { useState } from 'react';
 import Header from './components/Header/Header';
-import OuterSidebar from './components/Sidebar/OuterSidebar';
-import Contenair from './components/Conteniar/Contenair';
+import OuterSidebarContainer from '@/app/components/OuterSidebarContainer/OuterSidebarContainer';
+import InnerContanier from '@/app/components/InnerContanier/InnerContanier';
 import SignupForm from './components/SignUp/SignupForm';
 import './globals.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -28,8 +28,8 @@ export default function Layout({ children }) {
             <div className="app-layout">
                 <Header />
                 <div className="container">
-                    <OuterSidebar activeItem={activeItem} setActiveItem={setActiveItem} />
-                    <Contenair activeItem={activeItem} />
+                    <OuterSidebarContainer activeItem={activeItem} setActiveItem={setActiveItem} />
+                    <InnerContanier activeItem={activeItem} />
                 </div>
             </div>
         )}
