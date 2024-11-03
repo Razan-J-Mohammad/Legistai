@@ -5,7 +5,7 @@ import styles from './OuterSidebarContainer.module.css';
 import LogoutButton from './LogoutButton';
 import outerSidebarItems from './OuterSidebarItems';
 
-const OuterSidebarContainer = ({ activeItem, setActiveItem }) => {
+const OuterSidebarContainer = ({ activeItem, setActiveItem, onLogout }) => {
     const handleItemClick = (label) => {
         if (label !== 'Log Out' && label !== 'Start New Chat') {
             setActiveItem(label);
@@ -30,7 +30,7 @@ const OuterSidebarContainer = ({ activeItem, setActiveItem }) => {
                     </li>
                 ))}
             </ul>
-            <LogoutButton />
+            <LogoutButton onLogout={onLogout} />
         </aside>
     );
 };

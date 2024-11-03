@@ -2,12 +2,12 @@ import styles from './OuterSideBarItems.module.css'
 import InnerProfileContainer from "@/app/components/InnerProfileContainer/InnerProfileContainer";
 import React from "react";
 
-export  default function  Profile(){
+export  default function  Profile({ userData }){
     return (
         <div className={styles.items}>
             <h3>Profile</h3>
             <p>Manage your details and personal preference here</p>
-            <InnerProfileContainer />
+            <InnerProfileContainer userData={userData} />
         </div>
 
     )

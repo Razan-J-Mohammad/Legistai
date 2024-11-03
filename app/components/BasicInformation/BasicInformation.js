@@ -3,18 +3,21 @@ import Head from './Head';
 import Location from './Location';
 import Description from './Description';
 
-export default function BasicInformation({ showBasicInfo }) {
+export default function BasicInformation({ userData }) {
+    if (!userData) return <div>Loading...</div>;
+
     return (
         <div className={styles.info}>
             <div className={styles.head}>
-                <Head />
+                <Head userData={userData} />
             </div>
             <div className={styles.location}>
-                <Location />
+                <Location userData={userData} />
             </div>
             <div className={styles.description}>
-                <Description />
+                <Description userData={userData} />
             </div>
         </div>
     );
 }
+

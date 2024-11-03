@@ -5,6 +5,7 @@
     align-items: flex-start;
     padding: 10px;
     width: 180px;
+    height: 600px;
     background-color: var(--secondary-color);
     border-right: 1px solid var( --text-color);
 
