@@ -1,21 +1,20 @@
-// SignupForm.js
 "use client";
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './SignUp.module.css';
 import Image from 'next/image';
-import {FaArrowRight, FaUserPlus, FaStar, FaExclamationTriangle} from 'react-icons/fa';
+import { FaArrowRight, FaUserPlus, FaStar, FaExclamationTriangle } from 'react-icons/fa';
 import initialFormData from './initialFormData';
 import validateForm from './validateForm';
 import { handleBlur, handleChange, handleRatingChange } from './formHandlers';
+import axios from 'axios';
 
 const SignupForm = ({ onSubmit }) => {
-    const router = useRouter();
     const [formData, setFormData] = useState(initialFormData);
     const [errors, setErrors] = useState({});
     const [touchedFields, setTouchedFields] = useState({});
+    const [userId, setUserId] = useState(null);
 
     const validate = () => {
         const newErrors = validateForm(formData);
@@ -24,9 +23,22 @@ const SignupForm = ({ onSubmit }) => {
     };
 
     const showSuccessMessage = () => {
-        toast.success('Form submitted successfully!', {
+        toast.success('Form submitted successfully! Click "Continue" to view your account.', {
             position: "top-center",
             autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            icon: <FaExclamationTriangle />,
+            style: {
+                backgroundColor: "#1bbcbc",
+                color: "#fff",
+                fontSize: "16px",
+                fontWeight: "bold",
+                padding: "10px 15px",
+                borderRadius: "8px",
+            },
         });
     };
 
@@ -38,7 +50,7 @@ const SignupForm = ({ onSubmit }) => {
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            icon: <FaExclamationTriangle/> ,
+            icon: <FaExclamationTriangle />,
             style: {
                 backgroundColor: "#1bbcbc",
                 color: "#fff",
@@ -47,23 +59,43 @@ const SignupForm = ({ onSubmit }) => {
                 padding: "10px 15px",
                 borderRadius: "8px",
             },
-            progressStyle: {
-                backgroundColor: "#f5c6cb",
-            },
         });
     };
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
+        const newTouchedFields = {
+            name: true,
+            phone: true,
+            email: true,
+            location: true,
+            description: true,
+            rating: true,
+        };
+        setTouchedFields(newTouchedFields);
+
         if (validate()) {
-            showSuccessMessage();
-            onSubmit();
-            router.push('/');
-            setFormData(initialFormData);
-            setTouchedFields({});
-            setErrors({});
+            try {
+                const response = await axios.post('http://127.0.0.1:5000/api/register', formData);
+                const userId = response.data.user_id;
+                setUserId(userId);
+                localStorage.setItem('user', JSON.stringify(response.data));
+                showSuccessMessage();
+            } catch (error) {
+                const errorMessage = error.response?.data?.error || 'An error occurred';
+                console.error("Error details:", error.response);
+                showErrorMessage(errorMessage);
+            }
         } else {
-            showErrorMessage('Please fill in all required fields correctly');
+            showErrorMessage('Please fill in all required fields correctly.');
+        }
+    };
+
+    const handleContinue = () => {
+        if (!userId) {
+            showErrorMessage('Please click the "Register" button first to create an account.');
+        } else {
+            onSubmit(userId);
         }
     };
 
@@ -93,7 +125,6 @@ const SignupForm = ({ onSubmit }) => {
                         )}
                     </div>
 
-
                     <div className={styles.inputGroup}>
                         <input
                             type="text"
@@ -108,7 +139,6 @@ const SignupForm = ({ onSubmit }) => {
                             <div className={styles.errorMessage}>{errors.phone}</div>
                         )}
                     </div>
-
 
                     <div className={styles.inputGroup}>
                         <input
@@ -125,7 +155,6 @@ const SignupForm = ({ onSubmit }) => {
                         )}
                     </div>
 
-
                     <div className={styles.inputGroup}>
                         <input
                             type="text"
@@ -140,7 +169,6 @@ const SignupForm = ({ onSubmit }) => {
                             <div className={styles.errorMessage}>{errors.location}</div>
                         )}
                     </div>
-
 
                     <div className={styles.inputGroup}>
                         <textarea
@@ -157,7 +185,6 @@ const SignupForm = ({ onSubmit }) => {
                         )}
                     </div>
 
-
                     <div className={styles.ratingGroup}>
                         <label>Rating </label>
                         <div className={styles.starRating}>
@@ -167,22 +194,28 @@ const SignupForm = ({ onSubmit }) => {
                                     onClick={() => handleRatingChange(star, setFormData, validate)}
                                     className={formData.rating >= star ? styles.filledStar : styles.emptyStar}
                                 >
-                                     <FaStar />
+                                    <FaStar/>
                                 </span>
                             ))}
                         </div>
-                        {errors.rating && <div className={styles.errorMessage}>{errors.rating}</div>}
+                        {errors.rating && touchedFields.rating &&
+                            <div className={styles.errorMessage}>{errors.rating}</div>}
                     </div>
-
 
                     <button type="submit" className={styles.signupButton}>
                         Register
-                        <FaUserPlus style={{ marginLeft: '10px', fontSize: '16px' }} />
+                        <FaUserPlus style={{marginLeft: '10px', fontSize: '16px'}}/>
                     </button>
-                    <button type="button" onClick={handleFormSubmit} className={styles.signupButton}>
+
+                    <button
+                        type="button"
+                        onClick={handleContinue}
+                        className={styles.signupButton}
+                    >
                         Continue
-                        <FaArrowRight style={{ marginLeft: '10px', fontSize: '16px' }} />
+                        <FaArrowRight style={{marginLeft: '10px', fontSize: '16px'}}/>
                     </button>
+
                 </form>
             </div>
         </div>

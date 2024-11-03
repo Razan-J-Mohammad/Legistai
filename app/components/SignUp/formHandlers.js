@@ -1,4 +1,3 @@
-// formHandlers.js
 
 export const handleBlur = (fieldName, setTouchedFields, validate) => {
     setTouchedFields((prevTouched) => ({
@@ -23,3 +22,6 @@ export const handleRatingChange = (rating, setFormData, validate) => {
     }));
     validate();
 };
+
+
+
