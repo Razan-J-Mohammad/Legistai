@@ -26,9 +26,9 @@ export default function Header() {
 
 const LanguageSelector = () => (
     <div className={styles.languageContainer}>
-        <Image src="/us.webp" alt="American Flag" width={24} height={24} className={styles.flagIcon} />
+        <Image src="/us.webp" alt="American Flag" width={24} height={24} className={styles.flagIcon}/>
         <span>ENG</span>
-        <i className={`fa fa-angle-down`}></i>
+        <i className={`fa fa-angle-down`} style={{marginLeft: '5px'}}></i>
     </div>
 );
 

@@ -6,7 +6,6 @@ import OuterSidebarContainer from '@/app/components/OuterSidebarContainer/OuterS
 import InnerContanier from '@/app/components/InnerContanier/InnerContanier';
 import './globals.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import InnerProfileContainer from "@/app/components/InnerProfileContainer/InnerProfileContainer";
 
 const MainContainer = () => {
     const [activeItem, setActiveItem] = useState('Dashboard');

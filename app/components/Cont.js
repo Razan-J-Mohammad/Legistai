@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SignupForm from '../components/SignUp/SignupForm';
 
-const Cont = ({ activeItem }) => {
+const Cont = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     const handleFormSubmit = () => {

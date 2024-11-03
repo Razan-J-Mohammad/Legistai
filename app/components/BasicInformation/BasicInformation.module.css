@@ -1,6 +1,6 @@
 .info {
     border: 1px  solid white;
-    border-radius: 20px;
+    border-radius: 14px;
     background-color: var(--background-color);
     max-width: 800px;
 }
@@ -17,7 +17,7 @@
     border-radius: 10px;
     background-color: var(--secondary-color);
     display: flex;
-    justify-content: center;
+
     align-items: center;
     margin: 10px;
     flex-wrap: wrap;
@@ -84,7 +84,7 @@
     text-decoration: none;
     background-color: #eaf9f9;
     padding: 9px 12px;
-    border-radius: 12px;
+    border-radius: 48px;
     display: flex;
     align-items: center;
 }
@@ -103,9 +103,9 @@
     justify-content: space-around;
     background-color: #f5f7fa;
     border-radius: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 30px;
 }
 @media (max-width: 1439px) {
     .locationContainer {
@@ -142,6 +142,7 @@
     margin:10px 10px 0 10px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .emptyBox {
     width: 100%;

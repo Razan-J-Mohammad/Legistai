@@ -23,6 +23,7 @@
   align-items: center;
   background-color: var(--secondary-color);
   border-radius: 30px;
+  margin-left: 70px;
 }
 
 .searchIcon {
@@ -37,7 +38,7 @@
   height: 55px;
   padding: 0 50px;
   border: none;
-  border-radius: 30px;
+  border-radius: 48px;
   font-size: 16px;
   color: var(--text-color);
   background-color: var(--secondary-color);
@@ -65,11 +66,15 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 90px;
+  padding: 14px;
 }
-
+.icon-spacing {
+  margin-left: 10px;
+}
 .flagIcon {
   margin-right: 8px;
+  border-radius: 100%;
 }
 
 .notification {

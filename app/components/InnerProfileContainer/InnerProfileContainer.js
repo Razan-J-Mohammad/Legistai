@@ -10,8 +10,10 @@ import CaseInfo from "@/app/components/InnerProfileContainer/Content/CaseInfo";
 import FinancialInfo from "@/app/components/InnerProfileContainer/Content/FinancialInfo";
 import Communication from "@/app/components/InnerProfileContainer/Content/Communication";
 import Documents from "@/app/components/InnerProfileContainer/Content/Documents";
-export default function InnerProfileContainer() {
+
+export default function InnerProfileContainer({ userData }) {
     const [activeIndex, setActiveIndex] = useState(0);
+
     const sections = [
         { name: 'Basic Information', component: <BasicInfo /> },
         { name: 'Specialization', component: <Specialization /> },
@@ -28,9 +30,8 @@ export default function InnerProfileContainer() {
             <InnerSidebarButtons sections={sections} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
             <div className={styles.InnerSidebarContentContainer}>
                 {sections[activeIndex].component}
-                {activeIndex === 0 && <BasicInformation />}
+                {activeIndex === 0 && <BasicInformation userData={userData} />}
             </div>
         </div>
-
     );
 }

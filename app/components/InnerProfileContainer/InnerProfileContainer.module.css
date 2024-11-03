@@ -2,9 +2,8 @@
     display: flex;
     padding: 20px;
     background-color: var(--secondary-color);
-    border-radius: 25px;
-    min-height: 68vh;
-    margin-right: 40px;
+    border-radius: 10px;
+    min-height: 67vh;
     font-size: 12px;
 }
 .items{
@@ -28,8 +27,11 @@
     text-align: left;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    color:var(--text-color)
 }
 
 .sidebar button:hover {
     background-color: #e0e0e0;
+    color:black;
+    font-weight: bold;
 }

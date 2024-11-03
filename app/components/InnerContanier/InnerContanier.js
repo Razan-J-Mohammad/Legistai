@@ -6,9 +6,8 @@ import Calendar from '@/app/components/OuterSidebarItems/Calendar';
 import LawFirmOptions from '@/app/components/OuterSidebarItems/LawFirmOptions';
 import Settings from '@/app/components/OuterSidebarItems/Sttings';
 import styles from './InnerContanier.module.css';
-import InnerProfileContainer from "@/app/components/InnerProfileContainer/InnerProfileContainer";
 
-const InnerContanier = ({ activeItem }) => {
+const InnerContainer = ({ activeItem, userData }) => {
     let content;
     switch (activeItem) {
         case 'Dashboard':
@@ -18,7 +17,7 @@ const InnerContanier = ({ activeItem }) => {
             content = <Drive />;
             break;
         case 'Profile':
-            content = <Profile />;
+            content = <Profile userData={userData} />;
             break;
         case 'Calendar':
             content = <Calendar />;
@@ -34,13 +33,10 @@ const InnerContanier = ({ activeItem }) => {
     }
 
     return (
-        <>
-            <div className={styles.InnerContainer}>
-                {content}
-            </div>
-
-        </>
+        <div className={styles.InnerContainer}>
+            {content}
+        </div>
     );
 };
 
-export default InnerContanier;
+export default InnerContainer;
