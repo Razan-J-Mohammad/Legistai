@@ -83,7 +83,6 @@ const SignupForm = ({ onSubmit }) => {
                 showSuccessMessage();
             } catch (error) {
                 const errorMessage = error.response?.data?.error || 'An error occurred';
-                console.error("Error details:", error.response);
                 showErrorMessage(errorMessage);
             }
         } else {
@@ -129,7 +128,7 @@ const SignupForm = ({ onSubmit }) => {
                         <input
                             type="text"
                             name="phone"
-                            placeholder="Phone"
+                            placeholder="Phone (e.g., +97X XX XXX XXXX)"
                             value={formData.phone}
                             onBlur={() => handleBlur('phone', setTouchedFields, validate)}
                             onChange={(e) => handleChange(e, setFormData)}
@@ -147,7 +146,6 @@ const SignupForm = ({ onSubmit }) => {
                             placeholder="Email"
                             value={formData.email}
                             onBlur={() => handleBlur('email', setTouchedFields, validate)}
-                            onChange={(e) => handleChange(e, setFormData)}
                             className={errors.email && touchedFields.email ? styles.error : ''}
                         />
                         {errors.email && touchedFields.email && (
@@ -159,10 +157,9 @@ const SignupForm = ({ onSubmit }) => {
                         <input
                             type="text"
                             name="location"
-                            placeholder="Location"
+                            placeholder="Location (e.g., City - Town - Street)"
                             value={formData.location}
                             onBlur={() => handleBlur('location', setTouchedFields, validate)}
-                            onChange={(e) => handleChange(e, setFormData)}
                             className={errors.location && touchedFields.location ? styles.error : ''}
                         />
                         {errors.location && touchedFields.location && (
@@ -176,7 +173,6 @@ const SignupForm = ({ onSubmit }) => {
                             placeholder="Description"
                             value={formData.description}
                             onBlur={() => handleBlur('description', setTouchedFields, validate)}
-                            onChange={(e) => handleChange(e, setFormData)}
                             className={`${styles.customTextarea} ${errors.description && touchedFields.description ? styles.error : ''}`}
                             rows={4}
                         />

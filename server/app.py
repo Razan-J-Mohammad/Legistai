@@ -53,7 +53,6 @@ def register():
 
         if user_id_row:
             user_id = user_id_row[0]
-            print(f"User registered successfully! User ID: {user_id}")
             return jsonify({"message": "User registered successfully!", "user_id": user_id}), 201
         else:
             return jsonify({"error": "Failed to retrieve user ID."}), 500

@@ -9,10 +9,11 @@ const validateForm = (formData) => {
     }
 
     if (!formData.phone) {
-        errors.phone = "Please provide your phone number.";
+        errors.phone = "Please enter your phone number.";
     } else if (!/^(\+?\d[\d\s]*)$/.test(formData.phone)) {
-        errors.phone = "Phone number can start with a '+' but it’s not required. Only numbers and spaces are allowed.";
+        errors.phone = "Please ensure your phone number matches the placeholder";
     }
+
 
     if (!formData.email) {
         errors.email = "Please enter your email address.";

@@ -7,13 +7,6 @@ export const handleBlur = (fieldName, setTouchedFields, validate) => {
     validate();
 };
 
-export const handleChange = (e, setFormData) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-        ...prevFormData,
-        [name]: value,
-    }));
-};
 
 export const handleRatingChange = (rating, setFormData, validate) => {
     setFormData((prevFormData) => ({
