@@ -17,7 +17,7 @@ export default function Head({ userData }) {
                 </div>
             </div>
             <div>
-                <a href="https://www.legistai.com" className={styles.link}>Website Link</a>
+                <a href="https://www.legistai.com" target="_blank" rel="noopener noreferrer" className={styles.link}>Website Link</a>
             </div>
         </div>
     );

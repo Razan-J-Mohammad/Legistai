@@ -12,16 +12,15 @@ connection_string = (
     "UID=legistaitest;"
     "PWD=admin@123;"
     "Encrypt=yes;"
-    "TrustServerCertificate=no;"
+    "TrustServerCertificate=yes;"
     "Connection Timeout=30;"
 )
+
 conn = pyodbc.connect(connection_string)
 
 @app.route('/')
 def home():
     return "Welcome to the API! Use /api/register to register a user."
-
-
 
 @app.route('/api/register', methods=['POST'])
 def register():
@@ -34,11 +33,13 @@ def register():
         description = data.get('description')
         rating = data.get('rating')
 
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM users WHERE name = ?", (name,))
-        existing_user = cursor.fetchone()
+        standardized_name = name.replace(" ", "").lower()
 
-        if existing_user:
+        cursor = conn.cursor()
+        cursor.execute("SELECT name FROM users")
+        existing_names = [row[0].replace(" ", "").lower() for row in cursor.fetchall()]
+
+        if standardized_name in existing_names:
             return jsonify({"error": f"User with name `{name}` already exists."}), 400
 
         cursor.execute(
