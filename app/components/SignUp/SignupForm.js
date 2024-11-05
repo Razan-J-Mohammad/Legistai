@@ -1,4 +1,3 @@
-"use client";
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -146,6 +145,7 @@ const SignupForm = ({ onSubmit }) => {
                             placeholder="Email"
                             value={formData.email}
                             onBlur={() => handleBlur('email', setTouchedFields, validate)}
+                            onChange={(e) => handleChange(e, setFormData)}  // Add onChange here
                             className={errors.email && touchedFields.email ? styles.error : ''}
                         />
                         {errors.email && touchedFields.email && (
@@ -160,6 +160,7 @@ const SignupForm = ({ onSubmit }) => {
                             placeholder="Location (e.g., City - Town - Street)"
                             value={formData.location}
                             onBlur={() => handleBlur('location', setTouchedFields, validate)}
+                            onChange={(e) => handleChange(e, setFormData)}  // Add onChange here
                             className={errors.location && touchedFields.location ? styles.error : ''}
                         />
                         {errors.location && touchedFields.location && (
@@ -173,6 +174,7 @@ const SignupForm = ({ onSubmit }) => {
                             placeholder="Description"
                             value={formData.description}
                             onBlur={() => handleBlur('description', setTouchedFields, validate)}
+                            onChange={(e) => handleChange(e, setFormData)}  // Add onChange here
                             className={`${styles.customTextarea} ${errors.description && touchedFields.description ? styles.error : ''}`}
                             rows={4}
                         />
