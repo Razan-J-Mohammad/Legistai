@@ -46,6 +46,7 @@ source venv/bin/activate
 4. **Install Dependencies:**
 ```bash
 pip install Flask flask-cors
+pip install pyodbc
 ```
 5. **Run Flask Server:**
 ```bash
